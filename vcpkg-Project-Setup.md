@@ -45,6 +45,10 @@ example: ```find_package(fmt CONFIG REQUIRED)```
 
 3.3 Link the newly added vcpkg with ```target_link_libraries(HelloWorld PRIVATE fmt::fmt)```
 
+3.4 If using the vcpkg in a custom library/module in your code, make sure you have linked it to that library in the CMakeLists.txt file:<br>
+```add_library(my_lib source/my_lib.cpp)```<br>
+```target_link_library(my_lib PRIVATE fmt::fmt)```
+
 ## 4. Use the newly added library in your code.
 
 You can now include the new libraries you have <b>and</b> build the project.
